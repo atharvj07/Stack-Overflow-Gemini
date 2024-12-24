@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "Stack Overflow Gemini Assistant",
+    "version": "1.0",
+    "permissions": ["activeTab", "scripting", "http://localhost:5000/"],
+    "host_permissions": ["https://stackoverflow.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://stackoverflow.com/questions/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": ""
+    }
+  }
+  
